@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример перенаправления</title>
+</head>
+<body>
+
+<button onclick="redirectToPredefinedSite()">Перенаправление на заранее указанную страницу</button>
+<button onclick="redirectToCustomSite()">Перенаправление на собственную страницу</button>
+
+<script>
+  function redirectToPredefinedSite() {
+    
+    let predefinedSiteUrl = "https://google.com";
+    window.location.href = predefinedSiteUrl;
+  }
+
+  function redirectToCustomSite() {
+    
+    let customSiteUrl = prompt("Введите URL целевой страницы:");
+   
+    if (!customSiteUrl.startsWith("http://") && !customSiteUrl.startsWith("https://")) {
+      
+      customSiteUrl = "https://" + customSiteUrl;
+    }
+      window.location.href = customSiteUrl;
+  }
+</script>
+
+</body>
+</html>
